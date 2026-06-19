@@ -2,39 +2,37 @@
 ///se indica con un 0. Se desea emitir el valor del promedio de los números positivos
 ///leídos.
 
-
 Algoritmo TP5Ej8
-	//Definicion de variables
-	Definir num, opc, cont, contPos, varSuma Como Entero
-	Definir prom Como Real
+	//Definicion de variable
+	Definir num, cPos, cNeg, cont, suma Como Entero
 	
-	//Inicializacion de variables contador y sumatoria
-	cont <- 0
-	contPos <- 0
-	varSuma <- 0
+	//Ingreso de datos
+	Escribir Sin Saltar "Ingrese un numero: "
+	Leer num
 	
-	//Ejecucion logica de bucle Repetir
-	Repetir
-		//Contador para mostrar el orden de ingreso y calcular el promedio
-		cont <- cont + 1
-		Escribir Sin Saltar "Ingrese el ", cont, "° numero."
+	Si (num > 0) Entonces
+		cont <- 1
+		suma <- num
+	SiNo
+		cont <- 0
+		suma <- 0
+	FinSi
+	
+	
+	Mientras (num <> 0) Hacer
+		Escribir Sin Saltar "Ingrese otro numero: "
 		Leer num
 		
-		//Si el numero ingresado es positivo se suma, sino no
 		Si (num > 0) Entonces
-			varSuma <- varSuma + num
-			contPos <- contPos + 1
+			cont <- cont + 1
+			suma <- suma + num
 		FinSi
-		
-		Escribir ""
-		
-		Escribir Sin Saltar "1 - Continuar / 0 - Salir "
-		Leer opc
-		Escribir ""
-		
-	Hasta Que (opc == 0)
+	FinMientras
 	
-	prom <- varSuma/contPos
-	Escribir "El promedio es: ", prom
+	Si (cont = 0) Entonces
+		Escribir "No se ingresaron numeros positivos"
+	SiNo
+		Escribir "El promedio es: ", suma / cont
+	FinSi
 	
 FinAlgoritmo

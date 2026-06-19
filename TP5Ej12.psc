@@ -11,27 +11,28 @@ Algoritmo TP5Ej12
 	
 	Escribir ""
 	
-	//Primer ingreso y sustitucion de valores
-	Escribir Sin Saltar "Ingrese el 1° numero: "
-	Leer num1
-	
-	//Se sustituye la variable num2 por el valor ingresado en num1
-	num2 <- num1
-	
 	varCrec <- 0
 	varDecr <- 0
 	
 	//Ejecucion logica de bucle Repetir
-	Para i <- 2 Hasta lim Con Paso 1 Hacer
-		Escribir Sin Saltar "Ingrese el ", i, "° numero: "
-		Leer num1
-		
-		Si (num1 > num2) Entonces
-			varCrec <- varCrec + 1
+	Para i <- 1 Hasta lim Con Paso 1 Hacer
+		Si (i = 1) Entonces
+			//Primer ingreso y sustitucion de valores
+			Escribir Sin Saltar "Ingrese el 1° numero: "
+			Leer num1
+			//Se sustituye la variable num2 por el valor ingresado en num1
+			num2 <- num1
 		SiNo
-			varDecr <- varDecr + 1
-		FinSi
-		
+			Escribir Sin Saltar "Ingrese el ", i, "° numero: "
+			Leer num1
+			
+			Si (num1 > num2) Entonces
+				varCrec <- varCrec + 1
+			SiNo
+				varDecr <- varDecr + 1
+			FinSi
+		Fin Si
+				
 		//Se sustituye el valor ingresado en la variable num2 para corroborar nuevamente
 		num2 <- num1
 		

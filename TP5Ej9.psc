@@ -23,6 +23,10 @@ Algoritmo TP5Ej9
 			numMayor <- num
 		FinSi
 		
+		Si (num = -1) Entonces
+			cont <- cont - 1
+		FinSi
+		
 	FinMientras
 	
 	Si (cont = 1) Entonces
